@@ -4,57 +4,39 @@
       lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Users</title>
+    <title>Admin</title>
+    <style>
+        .myH1 {
+            display: block;
+            font-size: 2em;
+            margin-block-start: 0.67em;
+            margin-block-end: 0.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <table border="5px">
-        <tr>Some detail</tr>
-        <tr th:each="detail: ${details1}">
-            <td th:text="${detail}"></td>
-        </tr>
-    </table>
-    <table border="5px">
-        <tr>Some detail</tr>
-        <tr th:each="detail: ${details2}">
-            <td th:text="${detail}"></td>
-        </tr>
-    </table>
-    <table border="5px">
-        <tr>Some detail</tr>
-        <tr th:each="detail: ${details3}">
-            <td th:text="${detail}"></td>
-        </tr>
-    </table>
-    <table border="5px">
-        <tr>Some detail</tr>
-        <tr th:each="detail: ${details4}">
-            <td th:text="${detail}"></td>
-        </tr>
-    </table>
-    <table border="5px">
-        <tr>Some detail</tr>
-        <tr th:each="detail: ${details5}">
-            <td th:text="${detail}"></td>
-        </tr>
-    </table>
-    <table border="5px">
-        <tr>Some detail</tr>
-        <tr th:each="detail: ${details6}">
-            <td th:text="${detail}"></td>
-        </tr>
-    </table>
-    <table border="5px">
-        <tr>Some detail</tr>
-        <tr th:each="detail: ${details7}">
-            <td th:text="${detail}"></td>
-        </tr>
-    </table>
-    <table border="5px">
-        <tr>Some detail</tr>
-        <tr th:each="detail: ${details8}">
-            <td th:text="${detail}"></td>
-        </tr>
-    </table>
+    <div class="myH1">
+        <span>Welcome to admin page, </span>
+        <span th:text="${username}"></span>
+        <span>!</span>
+    </div>
+
+    <p>You can do next things:</p>
+    <ul>
+        <li>
+            <a href="/protected/profile/user">Check users page</a>
+        </li>
+        <li>
+            <a href="/">Go to main page</a>
+        </li>
+        <li>
+            <a href="/logout">Log Out</a>
+        </li>
+    </ul>
+
     <table border="20px">
         <tr>
             <th>ID</th>
@@ -62,6 +44,7 @@
             <th>Password</th>
             <th>Email</th>
             <th>Role</th>
+            <th>Deleted</th>
         </tr>
         <tr th:each="user : ${users}">
             <td th:text="${user.id}"></td>
@@ -69,6 +52,7 @@
             <td th:text="${user.password}"></td>
             <td th:text="${user.email}"></td>
             <td th:text="${user.role}"></td>
+            <td th:text="${user.deleted}"></td>
         </tr>
     </table>
 </body>

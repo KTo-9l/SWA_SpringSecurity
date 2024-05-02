@@ -6,19 +6,21 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "users", schema = "simplewebapp")
-public class User {
+public class MyUser {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "login")
+    @Column(name = "login", unique = true, nullable = false)
     private String login;
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
-    @Column(name = "email")
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
-    @Column(name = "role")
+    @Column(name = "role", nullable = false)
     private String role = "user";
+    @Column(name = "deleted", nullable = false)
+    private Boolean deleted = false;
 
     public Integer getId() {
         return id;
@@ -50,12 +52,14 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+    public Boolean getDeleted() {return deleted;}
+    public void setDeleted(Boolean deleted) {this.deleted = deleted;}
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User that = (User) o;
+        MyUser that = (MyUser) o;
 
         if (!Objects.equals(id, that.id)) return false;
         if (!Objects.equals(login, that.login)) return false;
