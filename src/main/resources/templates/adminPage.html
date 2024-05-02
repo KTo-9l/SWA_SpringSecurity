@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+    <table border="5px">
+        <tr>Some detail</tr>
+        <tr th:each="detail: ${details1}">
+            <td th:text="${detail}"></td>
+        </tr>
+    </table>
+    <table border="5px">
+        <tr>Some detail</tr>
+        <tr th:each="detail: ${details2}">
+            <td th:text="${detail}"></td>
+        </tr>
+    </table>
+    <table border="5px">
+        <tr>Some detail</tr>
+        <tr th:each="detail: ${details3}">
+            <td th:text="${detail}"></td>
+        </tr>
+    </table>
+    <table border="5px">
+        <tr>Some detail</tr>
+        <tr th:each="detail: ${details4}">
+            <td th:text="${detail}"></td>
+        </tr>
+    </table>
+    <table border="5px">
+        <tr>Some detail</tr>
+        <tr th:each="detail: ${details5}">
+            <td th:text="${detail}"></td>
+        </tr>
+    </table>
+    <table border="5px">
+        <tr>Some detail</tr>
+        <tr th:each="detail: ${details6}">
+            <td th:text="${detail}"></td>
+        </tr>
+    </table>
+    <table border="5px">
+        <tr>Some detail</tr>
+        <tr th:each="detail: ${details7}">
+            <td th:text="${detail}"></td>
+        </tr>
+    </table>
+    <table border="5px">
+        <tr>Some detail</tr>
+        <tr th:each="detail: ${details8}">
+            <td th:text="${detail}"></td>
+        </tr>
+    </table>
+    <table border="20px">
+        <tr>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Role</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.login}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.role}"></td>
+        </tr>
+    </table>
+</body>
+</html>
