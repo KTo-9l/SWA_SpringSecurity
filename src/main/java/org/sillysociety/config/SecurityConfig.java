@@ -49,7 +49,6 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/login")
                         .permitAll()
-//                        .successForwardUrl("/protected/profile")
                 )
                 .build();
     }
